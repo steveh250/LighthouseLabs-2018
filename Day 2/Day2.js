@@ -4,4 +4,6 @@ function powerOn() {
 }
 
 // Count availableModules
-function countModules
+function countModules() {
+	return availableModules.length();
+}

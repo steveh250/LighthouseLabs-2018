@@ -2,6 +2,3 @@
 function powerOn() {
   ship.powerOn = true;
 }
-
-// Count availableModules
-function countModules
