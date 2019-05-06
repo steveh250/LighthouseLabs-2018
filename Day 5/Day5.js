@@ -34,15 +34,15 @@ function loadModule(index) {
 // Modularise function to find name passed in
 function findModuleIndex(moduleName) {
   for (var i = 0; i < countModules(); i++) {
-    if (availableModules[i].name == moduleName) {
-console.log("Found module " + moduleName);
-      loadModule(i);
+    if (availableModules[i].name == moduleName && availableModules[i].essential == true) {
+      console.log("Found module " + moduleName);
+      return i;
     }
   }
 }
 
 // Find the propulsion module
-findModuleIndex('life-support');
-findModuleIndex('propulsion');
+loadModule(findModuleIndex('life-support'));
+loadModule(findModuleIndex('propulsion'));
 
 console.log("ship.modules : " + ship.modules[0].name + " " + ship.modules[1].name);
