@@ -7,11 +7,19 @@ const availableModules = [
   { name: "Module 5",     size: 50, enabled : false, essential: true },
 ];
 
+// Test setup of the ship
 var ship = {
   powerOn: false,
   modules: [],
   antenna: {
     active: false
+  }
+};
+
+// LARRY.quack to rest LARRY
+var LARRY = {
+  quack : function () {
+    console.log("Quack");
   }
 };
 
@@ -44,3 +52,12 @@ function findModuleIndex(moduleName) {
 loadModule(findModuleIndex('life-support'));
 loadModule(findModuleIndex('propulsion'));
 loadModule(findModuleIndex('navigation'));
+
+// Reset Larry 10 times
+function resetLARRY() {
+  for (var i = 0; i < 10; i++) {
+    LARRY.quack();
+  }
+}
+
+resetLARRY();
