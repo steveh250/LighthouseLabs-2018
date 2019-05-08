@@ -15,6 +15,12 @@ var ship = {
   }
 };
 
+// LARRY.quack to resst LARRY
+var LARRY = {
+  quack : function () {
+    console.log("Quack");
+  }
+};
 
 // Function to power on ship
 function powerOn() {
@@ -45,3 +51,12 @@ loadModule(findModuleIndex('life-support'));
 loadModule(findModuleIndex('propulsion'));
 loadModule(findModuleIndex('navigation'));
 loadModule(findModuleIndex('communication'));
+
+// Reset Larry 10 times
+function resetLARRY() {
+  for (var i = 0; i < 10; i++) {
+    LARRY.quack();
+  }
+}
+
+resetLARRY();
