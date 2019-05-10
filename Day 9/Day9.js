@@ -81,5 +81,6 @@ resetLARRY();
 // Set message on radio to stringied version of navigation
 function setMessage() {
   radio.message = JSON.stringify(navigation);
+  console.log(radio.message);
 }
 setMessage();
