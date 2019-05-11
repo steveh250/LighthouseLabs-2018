@@ -89,7 +89,6 @@ setMessage();
 function activateBeacon() {
   radio.beacon=true;
 }
-
 activateBeacon();
 
 // Set the radio frequency to low plus high divided by 2
@@ -99,5 +98,3 @@ function setFrequency() {
   console.log("Radio range high " + radio.range.high);
   console.log("Radio frequency " + radio.frequency);
 }
-
-setFrequency();
