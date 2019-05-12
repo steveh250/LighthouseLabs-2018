@@ -7,6 +7,7 @@ const availableModules = [
   { name: "Module 5",     size: 50, enabled : false, essential: true },
 ];
 
+// Navigation var for testing
 var navigation = {
       x: -2,
       y: 4,
@@ -14,6 +15,7 @@ var navigation = {
       speed: "raaaaid"
     };
 
+// Ship var for testing
 var ship = {
     powerOn: false,
     modules: [],
@@ -22,6 +24,7 @@ var ship = {
     }
   };
 
+// Radio var for testing
 var radio = {
   range: {
   low: 88,
@@ -32,10 +35,9 @@ var radio = {
   beacon: false
 };
 
-// LARRY.quack to resst LARRY
+// LARRY.quack to reset LARRY
 var LARRY = {
   quack : function () {
-    console.log("Quack");
   }
 };
 
@@ -54,7 +56,7 @@ function loadModule(index) {
   ship.modules.push(availableModules[index]);
 }
 
-// Modularise function to find name passed in
+// Modularise findModuleIndex function to find name passed in
 function findModuleIndex(moduleName) {
   for (var i = 0; i < countModules(); i++) {
     if (availableModules[i].name == moduleName) {
@@ -63,7 +65,7 @@ function findModuleIndex(moduleName) {
   }
 }
 
-// Find the propulsion module
+// Load the various modeules
 loadModule(findModuleIndex('life-support'));
 loadModule(findModuleIndex('propulsion'));
 loadModule(findModuleIndex('navigation'));
@@ -75,13 +77,11 @@ function resetLARRY() {
     LARRY.quack();
   }
 }
-
 resetLARRY();
 
 // Set message on radio to stringied version of navigation
 function setMessage() {
   radio.message = JSON.stringify(navigation);
-  console.log(radio.message);
 }
 setMessage();
 
@@ -94,9 +94,6 @@ activateBeacon();
 // Set the radio frequency to low plus high divided by 2
 function setFrequency() {
   radio.frequency=(radio.range.low + radio.range.high) / 2;
-  console.log("Radio range low " + radio.range.low);
-  console.log("Radio range high " + radio.range.high);
-  console.log("Radio frequency " + radio.frequency);
 }
 
 // Reset the navigation variables to zero - does not need to be called
